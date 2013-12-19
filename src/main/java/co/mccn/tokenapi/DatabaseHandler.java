@@ -124,20 +124,4 @@ public class DatabaseHandler {
         closeConnection(connection);
     }
 
-    public void initializePlayer(String username) {
-        String queryCheck = "SELECT `tokens` FROM `tokens` WHERE `player` = '" + username + "'";
-        String queryAdd = "INSERT INTO `tokens` (`player`, `tokens`) VALUES (" + username + ", 0)";
-        Connection connection = openConnection();
-        try {
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(queryCheck);
-            if (rs == null) {
-                stmt.executeUpdate(queryAdd);
-                _plugin.playerBalance.put(username, 0);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        closeConnection(connection);
-    }
 }

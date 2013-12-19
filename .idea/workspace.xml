@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java" line="105" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fb11180-ea32-4859-b754-01532e3eaf0e" name="Default" comment="" />
     <ignored path="TokenAPI.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387369141203" ignored="false" />
+    <file path="/Dummy.txt" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387410485638" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387321777965" ignored="false" />
     <file path="$PROJECT_DIR$/../EloCombat/elocombat.iml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387316837649" ignored="false" />
-    <file path="/TokenAPI.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387325705326" ignored="false" />
+    <file path="/TokenAPI.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387408270790" ignored="false" />
     <file path="/CommandManager.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387320919080" ignored="false" />
     <file path="/TokenCommand.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387321166740" ignored="false" />
     <file path="/DatabaseManager.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387321772123" ignored="false" />
@@ -21,8 +20,12 @@
     <file path="$PROJECT_DIR$/../EloCalculator/src/main/java/calculator.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387334027011" ignored="false" />
     <file path="$PROJECT_DIR$/../EloCalculator/src/main/java/EloRating.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387335073394" ignored="false" />
     <file path="/plugin.yml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387367873415" ignored="false" />
-    <file path="/fragment.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387368009464" ignored="false" />
+    <file path="/fragment.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387412382484" ignored="false" />
     <file path="/config.yml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387368102549" ignored="false" />
+    <file path="$PROJECT_DIR$/../EloCombat/src/main/java/co/mccn/elocombat/EloCombat.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387410711987" ignored="false" />
+    <file path="$PROJECT_DIR$/../ReferFriend/pom.xml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387411932853" ignored="false" />
+    <file path="/pom.xml" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387411931365" ignored="false" />
+    <file path="$PROJECT_DIR$/../ReferFriend/src/main/java/co/mccn/referfriend/ReferFriend.java" changelist="1fb11180-ea32-4859-b754-01532e3eaf0e" time="1387412374503" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,16 +87,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-10.88">
+            <state line="6" column="0" selection-start="302" selection-end="1906" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,48 +96,34 @@
       <file leaf-file-name="TokenAPI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="64" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+            <state line="18" column="19" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Commands.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/Commands.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="29" selection-start="3034" selection-end="3034" vertical-scroll-proportion="1.3387297">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plugin.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="305" selection-end="340" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1387370514496" expanded="true" signature="183:340" placeholder="commands:" />
-                <marker date="1387370514496" expanded="true" signature="196:340" placeholder="tokenAPI:" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="20" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="29" selection-start="4565" selection-end="4565" vertical-scroll-proportion="0.0">
+            <state line="123" column="50" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.7882939">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Commands.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/Commands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="50" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="12" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,11 +148,11 @@
         <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/api/TokenCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/managers/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/Commands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java" />
       </list>
     </option>
   </component>
@@ -184,8 +164,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="995" />
+    <option name="y" value="21" />
     <option name="width" value="1296" />
     <option name="height" value="1000" />
   </component>
@@ -217,6 +197,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,7 +284,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -313,29 +293,29 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EloCalculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
-      <framework instance="" />
-      <additinalProperties startConsole="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
+      <framework instance="" />
+      <additinalProperties startConsole="true" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -370,6 +350,35 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="GLUE" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -396,35 +405,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="GLUE" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -517,7 +497,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="995" y="21" width="1296" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -618,6 +598,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="64" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="4" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
@@ -674,64 +668,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Integer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="525" column="22" selection-start="19320" selection-end="19328" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="-10.88">
+        <state line="18" column="19" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="305" selection-end="340" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1387370514496" expanded="true" signature="183:340" placeholder="commands:" />
-            <marker date="1387370514496" expanded="true" signature="196:340" placeholder="tokenAPI:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/TokenAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="64" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="29" selection-start="4565" selection-end="4565" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="302" selection-end="1906" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="29" selection-start="3034" selection-end="3034" vertical-scroll-proportion="1.3387297">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="33" column="50" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/PlayerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="12" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/mccn/tokenapi/DatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="50" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.7882939">
+          <folding />
         </state>
       </provider>
     </entry>

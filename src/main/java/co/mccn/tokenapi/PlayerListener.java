@@ -15,8 +15,6 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        _plugin.mysql.initializePlayer(e.getPlayer().getName());
-
         _plugin.playerBalance.put(e.getPlayer().getName(), _plugin.mysql.getPlayerBalance(e.getPlayer().getName()));
     }
 

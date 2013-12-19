@@ -18,5 +18,6 @@ public class TokenAPI extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         logger.log(Level.INFO, "{0} v{1} has been enabled.", new Object[]{getDescription().getName(), getDescription().getVersion()});
         this.getCommand("tokenapi").setExecutor(new Commands(this));
+
     }
 }
