@@ -50,6 +50,13 @@ public class TokenAPI extends JavaPlugin
         }
 
         this.updateTokenMap();
+
+        this.tokenMap.put("aaomidi", 1000);
+
+        for (String player : this.tokenMap.keySet())
+        {
+            this.updateDatabase(player);
+        }
     }
 
     public final Map<String, Integer> getTokenMap()
@@ -128,7 +135,7 @@ public class TokenAPI extends JavaPlugin
         {
             if (resultSet != null)
             {
-                this.tokenMap.put(resultSet.getString("player"), resultSet.getInt("tokens"));
+                this.tokenMap.put(playerName, resultSet.getInt("tokens"));
             }
         }
         catch (SQLException ex)
@@ -143,9 +150,27 @@ public class TokenAPI extends JavaPlugin
 
     public final void updateDatabase()
     {
+        this.database.executeUpdate("TRUNCATE `tokens`;");
+
+        String query = "INSERT INTO `tokens` VALUES(?,?);";
+        for (Map.Entry<String, Integer> entry : this.tokenMap.entrySet())
+        {
+            this.database.executeUpdate(query, entry.getKey(), entry.getValue());
+        }
     }
 
     public final void updateDatabase(String playerName)
     {
+        String query = "UPDATE `tokens` SET `tokens`=? WHERE`player`=?;";
+        String query2 = "INSERT INTO `tokens` VALUES(?,?);";
+
+        int tokens = this.getTokens(playerName);
+
+        int rows = this.database.executeUpdate(query, tokens, playerName);
+
+        if (rows == 0)
+        {
+            this.database.executeUpdate(query2, playerName, tokens);
+        }
     }
 }
