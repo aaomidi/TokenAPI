@@ -1,11 +1,3 @@
 name: TokenAPI
 main: co.mccn.tokenapi.TokenAPI
-version: 1.0-SNAPSHOT
-description: An API for a virtual currency used in game.
-author: aaomidi
-authors: [aaomidi, Senither, BranicYeti]
-commands:
-   tokenapi:
-     description: Main command for TokenAPI.
-     permission: TokenAPI.admin
-     usage: /tokenAPI [player, set, add] [player] [value]
+version: ${project.version}
