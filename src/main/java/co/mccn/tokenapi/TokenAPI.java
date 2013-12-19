@@ -20,6 +20,7 @@ public class TokenAPI extends JavaPlugin
     {
         if (this.database != null)
         {
+            this.updateDatabase();
             this.database.disconnect();
         }
     }
@@ -50,13 +51,6 @@ public class TokenAPI extends JavaPlugin
         }
 
         this.updateTokenMap();
-
-        this.tokenMap.put("aaomidi", 1000);
-
-        for (String player : this.tokenMap.keySet())
-        {
-            this.updateDatabase(player);
-        }
     }
 
     public final Map<String, Integer> getTokenMap()
