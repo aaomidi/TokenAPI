@@ -67,7 +67,14 @@ public class TokenAPI extends JavaPlugin
     {
         if (!this.tokenMap.containsKey(playerName))
         {
-            this.updateTokenMap(playerName);
+            if (this.getServer().getOfflinePlayer(playerName) != null)
+            {
+                this.tokenMap.put(playerName, this.getConfig().getInt("start-value"));
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         return this.tokenMap.get(playerName);

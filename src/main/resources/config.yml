@@ -3,3 +3,4 @@ port: 3306
 database: 'tokens'
 username: 'root'
 password: 'p4ssw0rd'
+start-value: 100
