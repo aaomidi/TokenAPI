@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.logging.Level;
 
 public class TokenAPI extends JavaPlugin {
 
@@ -36,7 +37,7 @@ public class TokenAPI extends JavaPlugin {
             this.database = new Database(this);
         } catch (SQLException ex) {
             this.getLogger().severe("Error connecting to database! Disabling...");
-            ex.printStackTrace();
+            getLogger().log(Level.SEVERE, ex.getMessage());
             this.getPluginLoader().disablePlugin(this);
             return;
         }
@@ -55,7 +56,7 @@ public class TokenAPI extends JavaPlugin {
 
     public final int getTokens(String playerName) {
         if (!this.tokenMap.containsKey(playerName)) {
-            if (this.getServer().getOfflinePlayer(playerName) != null) {
+            if (this.getServer().getOfflinePlayer(playerName).hasPlayedBefore()) {
                 String query = "SELECT `tokens` FROM `tokens` WHERE `player`=?";
                 ResultSet resultSet = this.database.executeQuery(query, playerName);
                 try {
@@ -66,7 +67,7 @@ public class TokenAPI extends JavaPlugin {
                         return resultSet.getInt("tokens");
                     }
                 } catch (SQLException ex) {
-                    ex.printStackTrace();
+                    getLogger().log(Level.SEVERE,ex.getMessage());
                 }
             } else {
                 return -1;
@@ -86,7 +87,7 @@ public class TokenAPI extends JavaPlugin {
         } else {
             if (getServer().getOfflinePlayer(playerName) != null) {
                 String query = "UPDATE `tokens` SET `tokens`=? WHERE `player`=?";
-                this.database.executeUpdate(query, playerName, amount);
+                this.database.executeUpdate(query, amount, playerName);
 
             }
 
@@ -139,7 +140,7 @@ public class TokenAPI extends JavaPlugin {
    */
     public final void updateDatabase() {
 
-        String query = "UPDATE `tokens` set `tokens`=? WHERE `player`=?";
+        String query = "UPDATE `tokens` set `tokens`=? WHERE `player`=?;";
         for (Map.Entry<String, Integer> entry : this.tokenMap.entrySet()) {
             this.database.executeUpdate(query, entry.getValue(), entry.getKey());
         }
@@ -150,7 +151,7 @@ public class TokenAPI extends JavaPlugin {
 
         int tokens = this.getTokens(playerName);
 
-        this.database.executeQuery(query, tokens, playerName);
+        this.database.executeUpdate(query, tokens, playerName);
 
     }
 
@@ -159,17 +160,22 @@ public class TokenAPI extends JavaPlugin {
     }
 
     public final void initializePlayer(String playerName) {
-        String query = "SELECT `tokens` FROM `tokens` WHERE `player`=?";
-        ResultSet resultSet = this.database.executeQuery(query, playerName);
+        String query = "INSERT INTO `tokens` (`player`,`tokens`) VALUES(?, ?);";
+        String query2 = "SELECT `tokens` FROM `tokens` WHERE `player`=?;";
+        this.database.executeUpdate(query, playerName, 0);
+        ResultSet resultSet = this.database.executeQuery(query2, playerName);
         try {
-            if (resultSet == null || resultSet.isClosed()) {
-                String query2 = "INSERT INTO `tokens` (`player`,`tokens`) VALUES(?, ?)";
-                this.database.executeUpdate(query2, playerName);
+            if (resultSet.next()) {
+                do{
+                    tokenMap.put(playerName, resultSet.getInt("tokens"));
+                }while (resultSet.next());
             } else {
-                tokenMap.put(playerName, resultSet.getInt("tokens"));
+                getLogger().log(Level.SEVERE, "Error has occured in the plugin, please check your database connection.");
+
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            getLogger().log(Level.SEVERE, ex.getMessage());
+
         }
 
     }

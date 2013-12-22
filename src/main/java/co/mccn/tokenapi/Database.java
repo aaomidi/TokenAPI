@@ -32,7 +32,7 @@ public final class Database {
 
         this.connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%s/%s", this.databaseHost, this.databasePort, this.databaseName), this.databaseUser, this.databasePass);
 
-        this.executeUpdate("CREATE TABLE IF NOT EXISTS `tokens` (`id` INT NOT NULL AUTO_INCREMENT, `player` varchar(16) NOT NULL, `tokens` int(11) NOT NULL DEFAULT '0', PRIMARY KEY(`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+        this.executeUpdate("CREATE TABLE IF NOT EXISTS `tokens` (`player` varchar(16) NOT NULL, `tokens` int(11) NOT NULL DEFAULT '0', PRIMARY KEY(`player`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
     }
 
     public void connect(String databaseHost, String databasePort, String databaseName, String databaseUser, String databasePass) {
