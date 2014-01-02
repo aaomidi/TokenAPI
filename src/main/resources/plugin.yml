@@ -1,3 +1,4 @@
 name: TokenAPI
 main: co.mccn.tokenapi.TokenAPI
 version: ${project.version}
+depend: [MCCN_SQL]

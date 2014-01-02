@@ -1,6 +1,8 @@
 package co.mccn.tokenapi;
 
+import co.mccn.mccnsql.MCCNSQL;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -12,15 +14,11 @@ import java.util.logging.Level;
 
 public class TokenAPI extends JavaPlugin {
 
-    private Database database;
     private Map<String, Integer> tokenMap = new LinkedHashMap<>();
+    public MCCNSQL mccnSql;
 
     @Override
     public final void onDisable() {
-        if (this.database != null) {
-            this.updateDatabase();
-            this.database.disconnect();
-        }
     }
 
     @Override
@@ -33,17 +31,22 @@ public class TokenAPI extends JavaPlugin {
 
     @Override
     public final void onEnable() {
-        try {
-            this.database = new Database(this);
-        } catch (SQLException ex) {
-            this.getLogger().severe("Error connecting to database! Disabling...");
-            getLogger().log(Level.SEVERE, ex.getMessage());
-            this.getPluginLoader().disablePlugin(this);
-            return;
-        }
         getServer().getPluginManager().registerEvents(new Events(this), this);
+        Plugin plugin = getServer().getPluginManager().getPlugin("MCCNSQL");
+        if (plugin == null) {
+            getLogger().log(Level.SEVERE, "MCCNSQL not found, Disabling...");
+            getServer().getPluginManager().disablePlugin(this);
+        } else {
+            mccnSql = (MCCNSQL) plugin;
+        }
+        mccnSql.setDatabase(getConfig().getString("database"));
+        mccnSql.connect();
+        createDatabase();
 
+    }
 
+    private void createDatabase() {
+        mccnSql.executeUpdate("CREATE TABLE IF NOT EXISTS `tokens` (`player` varchar(16) NOT NULL, `tokens` int(11) NOT NULL DEFAULT '0', PRIMARY KEY(`player`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
     }
 
     public final Map<String, Integer> getTokenMap() {
@@ -58,16 +61,18 @@ public class TokenAPI extends JavaPlugin {
         if (!this.tokenMap.containsKey(playerName)) {
             if (this.getServer().getOfflinePlayer(playerName).hasPlayedBefore()) {
                 String query = "SELECT `tokens` FROM `tokens` WHERE `player`=?";
-                ResultSet resultSet = this.database.executeQuery(query, playerName);
+                ResultSet resultSet = mccnSql.executeQuery(query, playerName);
                 try {
-                    if (resultSet == null || resultSet.isClosed()) {
-                        return -1;
+                    if (resultSet.next()) {
+                        do {
+                            int tokens = resultSet.getInt("tokens");
+                            this.tokenMap.put(playerName, tokens);
+                            return this.tokenMap.get(playerName);
+                        } while (resultSet.next());
                     }
-                    while (resultSet.next()) {
-                        return resultSet.getInt("tokens");
-                    }
+                    return -1;
                 } catch (SQLException ex) {
-                    getLogger().log(Level.SEVERE,ex.getMessage());
+                    getLogger().log(Level.SEVERE, ex.getMessage());
                 }
             } else {
                 return -1;
@@ -84,10 +89,11 @@ public class TokenAPI extends JavaPlugin {
     public final void setTokens(String playerName, int amount) {
         if (tokenMap.containsKey(playerName)) {
             this.tokenMap.put(playerName, amount);
+            this.updateDatabase(playerName);
         } else {
             if (getServer().getOfflinePlayer(playerName) != null) {
                 String query = "UPDATE `tokens` SET `tokens`=? WHERE `player`=?";
-                this.database.executeUpdate(query, amount, playerName);
+                mccnSql.executeUpdate(query, amount, playerName);
 
             }
 
@@ -142,7 +148,7 @@ public class TokenAPI extends JavaPlugin {
 
         String query = "UPDATE `tokens` set `tokens`=? WHERE `player`=?;";
         for (Map.Entry<String, Integer> entry : this.tokenMap.entrySet()) {
-            this.database.executeUpdate(query, entry.getValue(), entry.getKey());
+            mccnSql.executeUpdate(query, entry.getValue(), entry.getKey());
         }
     }
 
@@ -151,7 +157,7 @@ public class TokenAPI extends JavaPlugin {
 
         int tokens = this.getTokens(playerName);
 
-        this.database.executeUpdate(query, tokens, playerName);
+        mccnSql.executeUpdate(query, tokens, playerName);
 
     }
 
@@ -160,17 +166,17 @@ public class TokenAPI extends JavaPlugin {
     }
 
     public final void initializePlayer(String playerName) {
-        String query = "INSERT INTO `tokens` (`player`,`tokens`) VALUES(?, ?);";
+            String query = "INSERT IGNORE INTO `tokens` (`player`,`tokens`) VALUES(?, ?);";
         String query2 = "SELECT `tokens` FROM `tokens` WHERE `player`=?;";
-        this.database.executeUpdate(query, playerName, 0);
-        ResultSet resultSet = this.database.executeQuery(query2, playerName);
+        mccnSql.executeUpdate(query, playerName, 0);
+        ResultSet resultSet = mccnSql.executeQuery(query2, playerName);
         try {
             if (resultSet.next()) {
-                do{
+                do {
                     tokenMap.put(playerName, resultSet.getInt("tokens"));
-                }while (resultSet.next());
+                } while (resultSet.next());
             } else {
-                getLogger().log(Level.SEVERE, "Error has occured in the plugin, please check your database connection.");
+                getLogger().log(Level.SEVERE, "Error has occurred in the plugin, please check your database connection.");
 
             }
         } catch (SQLException ex) {
