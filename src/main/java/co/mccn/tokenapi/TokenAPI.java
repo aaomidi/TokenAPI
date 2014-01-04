@@ -39,10 +39,14 @@ public class TokenAPI extends JavaPlugin {
         } else {
             mccnSql = (MCCNSQL) plugin;
         }
+    }
+
+    private void connect() {
         mccnSql.setDatabase(getConfig().getString("database"));
+        mccnSql.setUserName(getConfig().getString("username"));
+        mccnSql.setPassWord(getConfig().getString("password"));
         mccnSql.connect();
         createDatabase();
-
     }
 
     private void createDatabase() {
@@ -166,7 +170,7 @@ public class TokenAPI extends JavaPlugin {
     }
 
     public final void initializePlayer(String playerName) {
-            String query = "INSERT IGNORE INTO `tokens` (`player`,`tokens`) VALUES(?, ?);";
+        String query = "INSERT IGNORE INTO `tokens` (`player`,`tokens`) VALUES(?, ?);";
         String query2 = "SELECT `tokens` FROM `tokens` WHERE `player`=?;";
         mccnSql.executeUpdate(query, playerName, 0);
         ResultSet resultSet = mccnSql.executeQuery(query2, playerName);
